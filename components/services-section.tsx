@@ -21,14 +21,14 @@ const services = [
     // price: "Desde $1200",
     popular: false,
   },
-  // {
-  //   icon: Smartphone,
-  //   title: "Aplicaciones Móviles",
-  //   description: "Desarrollo de apps nativas y multiplataforma con React Native y tecnologías híbridas.",
-  //   features: ["React Native", "Apps híbridas", "UI/UX móvil", "Integración APIs"],
-  //   price: "Desde $1500",
-  //   popular: false,
-  // },
+  {
+    icon: Smartphone,
+    title: "Aplicaciones full-stack",
+    description: "Desarrollo de apps nativas y multiplataforma con React Native y tecnologías híbridas.",
+    features: ["React Native", "Apps híbridas", "UI/UX", "Integración APIs"],
+    // price: "Desde $1500",
+    popular: false,
+  },
   // {
   //   icon: Database,
   //   title: "Bases de Datos",
