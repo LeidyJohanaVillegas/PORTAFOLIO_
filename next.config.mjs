@@ -1,17 +1,18 @@
-/** @type {import('next').NextConfig} */
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
+
 const nextConfig = {
-  output: 'export',  // Exporta la app estatica
+  output: 'export', // 👉 genera la carpeta "out/" con HTML estático
+  images: {
+    unoptimized: true, // 👉 evita problemas con optimización de imágenes en GitHub Pages
+  },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // 👉 evita que la build falle si hay errores de eslint
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // 👉 evita que la build falle si hay errores de TS
   },
-  images: {
-    unoptimized: true, // GitHub pages no soporta image optimizer
-  },
-  basePath: repoName ? `/${repoName}` : '', // Ajusta las rutas
-  assetPrefix: repoName ? `/${repoName}/` : '',
-}
+  basePath: repoName ? `/${repoName}` : '', // 👉 ajusta rutas cuando tu proyecto está en un subpath (/repoName)
+  assetPrefix: repoName ? `/${repoName}/` : '', // 👉 asegura que los assets se carguen desde el repo
+};
 
-export default nextConfig
+export default nextConfig;
